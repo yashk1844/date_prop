@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Proposal</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .no-button {
+            background-color: #ff6666;
+        }
+        .yes-button {
+            background-color: #66ff66;
+        }
+        .moving {
+            position: absolute;
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="question">Will you go out on a date with me?</div>
+    <button id="yes" class="button yes-button">Yes</button>
+    <button id="no" class="button no-button">No</button>
+
+    <script>
+        const noButton = document.getElementById('no');
+        const yesButton = document.getElementById('yes');
+
+        noButton.addEventListener('click', () => {
+            // Randomly reposition the "No" button
+            const x = Math.random() * (window.innerWidth - 100); // Subtracting button width
+            const y = Math.random() * (window.innerHeight - 100); // Subtracting button height
+            noButton.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        yesButton.addEventListener('click', () => {
+            alert("I know you would select yes! See you at 8 near Frullato.");
+        });
+    </script>
+</body>
+</html>
